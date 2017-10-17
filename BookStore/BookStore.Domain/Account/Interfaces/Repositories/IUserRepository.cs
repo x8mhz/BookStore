@@ -1,6 +1,9 @@
-﻿namespace BookStore.Domain.Account.Interfaces.Repositories
+﻿using System;
+using BookStore.Domain.Account.Entities;
+
+namespace BookStore.Domain.Account.Interfaces.Repositories
 {
-    public interface IUserRepository
+    public interface IUserRepository : IDisposable, IRepositoryBase<User>
     {
         
     }

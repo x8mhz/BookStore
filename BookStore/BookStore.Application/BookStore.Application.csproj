@@ -35,7 +35,17 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServices\AppServiceBase.cs" />
+    <Compile Include="AppServices\Interfaces\IAppServiceBase.cs" />
+    <Compile Include="AppServices\Interfaces\IUserAppService.cs" />
+    <Compile Include="AppServices\UserAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Domain\BookStore.Domain.csproj">
+      <Project>{1886F954-7F00-48AA-9984-B06FE04AD5D6}</Project>
+      <Name>BookStore.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

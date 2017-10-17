@@ -36,13 +36,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\Entities\User.cs" />
+    <Compile Include="Account\Enum\ERole.cs" />
     <Compile Include="Account\Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Account\Interfaces\Repositories\IUserRepository.cs" />
+    <Compile Include="Account\Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Account\Interfaces\Services\IUserService.cs" />
+    <Compile Include="Account\Services\ServiceBase.cs" />
+    <Compile Include="Account\Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\Interfaces\Services\" />
-    <Folder Include="Account\Services\" />
     <Folder Include="Store\Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

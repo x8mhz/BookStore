@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookStore.Domain.Account.Interfaces.Repositories
+namespace BookStore.Application.AppServices.Contracts
 {
-    public interface IRepositoryBase<TEntity> where TEntity : class
+    public interface IAppServiceBase<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
         TEntity GetById(Guid id);
