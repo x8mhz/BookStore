@@ -5,28 +5,15 @@ namespace BookStore.Domain.Account.Entities
 {
     public class User
     {
-        public User(string username, string password, string email)
-        {
-            Id = Guid.NewGuid();
-            Username = username;
-            Password = password;
-            Email = email;
-            Role = ERole.User;
-            VerificationCode = Guid.NewGuid();
-            Verification = false;
-            Active = false;
-            LastLoginDate = DateTime.Now;
-        }
-
-        public Guid Id { get; private set; }
-        public string Username { get; private set; }
-        public string Password { get; private set; }
-        public string Email { get; private set; }
-        public ERole Role { get; private set; }
-        public Guid VerificationCode { get; private set; }
-        public bool Verification { get; private set; }
-        public bool Active { get; private set; }
-        public DateTime LastLoginDate { get; private set; }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get;set; }
+        public string Email { get; set; }
+        public ERole Role { get; set; }
+        public Guid VerificationCode { get; set; }
+        public bool Verification { get; set; }
+        public bool Active { get; set; }
+        public DateTime LastLoginDate { get; set; }
 
         public string CodeToEmail()
         {

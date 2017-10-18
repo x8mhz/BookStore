@@ -1,9 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.Web.ViewModel
 {
     public class UserViewModel
     {
+        [Key]
+        public Guid Id { get; set; }
+
         [Display(Name = "Usuário")]
         [Required(ErrorMessage = "Informe um usuario válido")]
         public string Username { get; set; }

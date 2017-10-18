@@ -1,4 +1,4 @@
-﻿using BookStore.Application.AppServices.Contracts;
+﻿using System;
 using BookStore.Domain.Account.Entities;
 
 namespace BookStore.Application.AppServices.Interfaces

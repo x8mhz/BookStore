@@ -1,44 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BookStore.Domain.Account.Interfaces.Repositories;
 using BookStore.Domain.Account.Interfaces.Services;
+using System.Collections.Generic;
 
 namespace BookStore.Domain.Account.Services
 {
-    public class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
+    public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : class
     {
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        private readonly IRepositoryBase<TEntity> _repository;
 
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
-        public TEntity GetById(Guid id)
+        public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _repository.GetById(id);
         }
 
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _repository.Add(entity);
         }
 
         public void Edit(TEntity entity)
         {
-            throw new NotImplementedException();
+            _repository.Edit(entity);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+           _repository.Delete(entity);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _repository.Save();
         }
     }
 }

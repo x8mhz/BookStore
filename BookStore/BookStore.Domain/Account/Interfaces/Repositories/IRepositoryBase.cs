@@ -6,7 +6,7 @@ namespace BookStore.Domain.Account.Interfaces.Repositories
     public interface IRepositoryBase<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
-        TEntity GetById(Guid id);
+        TEntity GetById(int id);
         void Add(TEntity entity);
         void Edit(TEntity entity);
         void Delete(TEntity entity);

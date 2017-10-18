@@ -6,21 +6,16 @@ using BookStore.Infra.Data.Context;
 
 namespace BookStore.Infra.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
-        private BookStoreContext _db;
-
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
+        private readonly BookStoreContext _db;
 
         public IEnumerable<TEntity> GetAll()
         {
             return _db.Set<TEntity>();
         }
 
-        public TEntity GetById(Guid id)
+        public TEntity GetById(int id)
         {
             return _db.Set<TEntity>().Find(id);
         }
@@ -43,6 +38,11 @@ namespace BookStore.Infra.Data.Repositories
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _db.Dispose();
         }
     }
 }

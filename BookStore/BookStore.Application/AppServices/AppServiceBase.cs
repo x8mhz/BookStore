@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using BookStore.Application.AppServices.Contracts;
+﻿using BookStore.Application.AppServices.Interfaces;
 using BookStore.Domain.Account.Interfaces.Services;
+using System;
+using System.Collections.Generic;
 
 namespace BookStore.Application.AppServices
 {
-    public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
+    public class AppServiceBase<TEntity> : IAppServiceBase<TEntity> where TEntity : class
     {
         private readonly IServiceBase<TEntity> _service;
 
@@ -34,7 +34,7 @@ namespace BookStore.Application.AppServices
             return _service.GetAll();
         }
 
-        public TEntity GetById(Guid id)
+        public TEntity GetById(int id)
         {
             return _service.GetById(id);
         }
@@ -42,11 +42,6 @@ namespace BookStore.Application.AppServices
         public void Save()
         {
             _service.Save();
-        }
-
-        public void Dispose()
-        {
-            _service.Dispose();
         }
     }
 }
